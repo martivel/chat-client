@@ -16,10 +16,14 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ["es2015", "react"],
+            presets: ['es2015', 'react'],
           },
         },
       },
+      {
+        test: /\.(css|scss)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      }
     ]
   },
   plugins: [
