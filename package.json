@@ -1,0 +1,9 @@
+{
+  "name": "chat-client",
+  "version": "0.0.1",
+  "description": "A test chat client written in React, bundled with Webpack. Personal project for learning and getting a better understanding of Websockets.",
+  "main": "src/index.js",
+  "repository": "git@github.com:martivel/chat-client.git",
+  "author": "Martijn Velders <martijnvelders@gmail.com>",
+  "license": "MIT"
+}
