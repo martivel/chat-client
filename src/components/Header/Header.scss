@@ -1,0 +1,14 @@
+@import "../../styles/app";
+
+.chat__header {
+  padding: $padding-size / 2;
+  color: $white;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  background:  linear-gradient(to bottom, $app-header-background-color, darken($app-header-background-color, 10%));
+}
+
+.chat__title {
+  margin-bottom: 0;
+  text-shadow: 1px 2px 3px darken($app-header-background-color, 15%);
+}

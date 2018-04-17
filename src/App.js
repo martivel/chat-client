@@ -1,10 +1,12 @@
 import React from 'react'
+import Register from './components/Register/Register'
 import './styles/app.scss'
+import './App.scss'
 
 const App = () => {
   return (
-    <div className="App">
-      Chat client comes here
+    <div className="chat">
+      <Register />
     </div>
   )
 }
