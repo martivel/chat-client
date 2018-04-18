@@ -1,0 +1,27 @@
+@import "../../styles/base/variables";
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($white, 0.5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  &__animation {
+    border: 8px solid $color-gray;
+    border-top: 8px solid $color-monarch;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  }
+}

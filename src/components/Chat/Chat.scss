@@ -1,0 +1,20 @@
+@import "../../styles/base/variables";
+
+.chat {
+  &__window {
+    padding: $padding-size;
+  }
+
+  &__messages {
+    height: 200px;
+    padding: $padding-size / 2;
+    border: $border;
+    border-radius: $border-radius;
+    overflow: auto;
+  }
+
+  &__user-input {
+    border-top: $border;
+    padding: ($padding-size / 2) $padding-size;
+  }
+}

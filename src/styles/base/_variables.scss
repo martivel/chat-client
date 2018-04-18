@@ -11,6 +11,7 @@ $color-loulou: #5C1547;
 $color-monarch: #92063E;
 $color-orange: #FF5627;
 $color-amber: #FFC400;
+$color-gray: #E4D8D8;
 
 // App colors
 $app-background: #ffffff;
@@ -21,5 +22,6 @@ $app-header-background-color: $color-orange;
 $padding-size: 25px;
 $margin-size: 25px;
 
-// Border radius
+// Border settings
 $border-radius: 5px;
+$border: 1px solid $color-gray;

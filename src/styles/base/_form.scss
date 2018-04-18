@@ -1,0 +1,34 @@
+@import "../../styles/base/variables";
+
+.form {
+  &__group {
+    display: block;
+
+    & > * {
+      margin: ($margin-size / 4) 0;
+    }
+  }
+
+  &__title {
+    display: block;
+  }
+
+  &__control {
+    width: 100%;
+    font-size: .8rem;
+    padding: $padding-size / 2;
+    border-radius: $border-radius;
+    border: $border;
+  }
+
+  &__button {
+    margin: 0;
+    padding: $padding-size / 2;
+    color: $white;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(to right, $color-monarch, darken($color-monarch, 10%));
+    border: none;
+    border-radius: $border-radius;
+  }
+}
