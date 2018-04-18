@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -26,10 +27,16 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    hot: true,
+    open: true,
+    port: 8080,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'React Chat Client with Websockets',
       template: './public/index.html',
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ]
 }
