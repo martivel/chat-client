@@ -1,15 +1,18 @@
 @import "../../styles/base/variables";
 
 .register {
-  &__body {
+  &__form {
     padding: $padding-size;
   }
 
   &__disclaimer {
-    font-size: 0.8rem;
-    font-style: italic;
-    color: darken($color-gray, 40%);
-    border-top: 1px solid $color-gray;
     padding: $padding-size / 2;
+    border-top: 1px solid $color-gray;
+
+    p {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: darken($color-gray, 40%);
+    }
   }
 }

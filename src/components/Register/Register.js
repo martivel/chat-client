@@ -1,48 +1,51 @@
+import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import Header from '../Header/Header'
 import "./Register.scss"
 
 class Register extends Component {
-  constructor() {
-    super()
-    this.state = {
-      username: undefined,
-    }
-    this.handleChange = this.handleChange.bind(this)
-  }
-
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({
-      username: event.target.value,
+      [`${event.target.name}`]: event.target.value,
     })
   }
 
   render() {
     return (
       <article className="register">
-        <Header title="Register here" />
+        <Header title="Choose username" />
 
-        <div className="register__body form">
+        <form
+          name="register-form"
+          className="register__form form"
+          onSubmit={ (event) => this.props.handleSubmit(this.state, event) }
+        >
           <label className="form__group">
             <span className="form__title">Username *</span>
             <input
               type="text"
-              className="form__control"
               placeholder="Please fill in your username"
-              required
+              name="username"
               onChange={ this.handleChange }
+              className="form__control"
+              required
             />
           </label>
 
-          <button className="form__button" onClick={ () => this.props.handleSubmit(this.state) }>Sign in</button>
-        </div>
+          <button className="form__button">Sign in</button>
+        </form>
 
         <footer className="register__disclaimer">
-          This small app is just for fun and learning of Websockets. No data is being saved, but nothing is secured for now as well.
+          <p>This small app is just for fun and learning of Websockets. No data is being saved, but nothing is secured
+            for now as well.</p>
         </footer>
       </article>
     )
   }
+}
+
+Register.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
 }
 
 export default Register

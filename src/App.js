@@ -10,7 +10,7 @@ class App extends Component {
     super()
 
     this.state = {
-      username: 'hi',
+      username: undefined,
       isConnected: false,
       isLoading: false,
       messages: [],
@@ -31,13 +31,17 @@ class App extends Component {
     this.socket.close()
   }
 
-  handleChatSubmit = ({ message }) => {
+  handleChatSubmit = (data, ev) => {
+    const { username } = this.state
+    const { message } = data
     const msg = {
       message,
-      username: this.state.username,
-      email: "john@doe.com",
+      username,
     }
+
     this.socket.send(JSON.stringify(msg))
+
+    ev.preventDefault()
   }
 
   handleRegisterSubmit = ({ username }) => {
@@ -47,6 +51,8 @@ class App extends Component {
         isConnected: true,
       })
     }
+
+    event.preventDefault()
   }
 
   render() {

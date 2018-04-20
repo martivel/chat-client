@@ -1,26 +1,19 @@
+import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import Header from '../Header/Header'
 import './Chat.scss'
 
 class Chat extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      message: "",
-    }
-  }
-
   handleChange = (event) => {
     this.setState({
-      message: event.target.value,
+      [`${event.target.name}`]: event.target.value,
     })
   }
-
+  
   render() {
     return (
       <article className="chat">
-        <Header title="PLS CHAT" />
+        <Header title="Chat room" />
 
         <div className="chat__window">
           <div className="chat__messages">
@@ -34,26 +27,32 @@ class Chat extends Component {
           </div>
         </div>
 
-        <div className="chat__user-input form">
+        <form
+          name="chat-form"
+          className="chat__form form"
+          onSubmit={ (event) => this.props.handleSubmit(this.state, event) }
+        >
           <label className="form__group">
             <input
               type="text"
-              className="form__control"
+              name="message"
               placeholder="Enter your message..."
-              required
+              className="form__control"
               onChange={ this.handleChange }
+              required
+              autoComplete="off"
             />
           </label>
 
-          <button
-            onClick={ () => this.props.handleSubmit(this.state) }
-            className="form__button">
-            Send message
-          </button>
-        </div>
+          <button className="form__button">Send message</button>
+        </form>
       </article>
     )
   }
+}
+
+Chat.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
 }
 
 export default Chat
